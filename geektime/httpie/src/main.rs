@@ -159,6 +159,7 @@ async fn main() -> Result<()> {
     let opts: Opts = Opts::parse();
     let mut headers = header::HeaderMap::new();
     // 为我们的 http 客户端添加一些缺省的 HTTP 头
+    headers.insert("Key", "Value".parse()?);
     headers.insert("X-POWERED-BY", "Rust".parse()?);
     headers.insert(header::USER_AGENT, "Rust Httpie".parse()?);
     let client = reqwest::Client::builder()
