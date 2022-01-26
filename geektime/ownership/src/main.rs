@@ -115,15 +115,53 @@ fn find_pos(data: Vec<u32>, v: u32) -> Option<usize> {
     None
 }
 
+
 fn example10() {
     let data = vec![1, 2, 3, 4];
     let data1 = data;
     println!("sum of data1: {}", sum(data1));
+    println!("data1: {:?}", data1); // error1
+    println!("sum of data: {}", sum(data)); // error2
+}
+
+fn sum(data: Vec<u32>) -> u32 {
+    data.iter().fold(0, |acc, x| acc + x)
+}
+
+
+
+fn example11() {
+    let data = vec![1, 2, 3, 4];
+    let data1 = &data;
+    // 值的地址是什么？引用的地址又是什么？
+    println!(
+        "addr of value: {:p}({:p}), addr of data {:p}, data1: {:p}",
+        &data, data1, &&data, &data1
+    );
+    println!("sum of data1: {}", sum2(data1));
+
+    // 堆上数据的地址是什么？
+    println!(
+        "addr of items: [{:p}, {:p}, {:p}, {:p}]",
+        &data[0], &data[1], &data[2], &data[3]
+    );
+}
+
+fn sum2(data: &Vec<u32>) -> u32 {
+    // 值的地址会改变么？引用的地址会改变么？
+    println!("addr of value: {:p}, addr of ref: {:p}", data, &data);
+    data.iter().fold(0, |acc, x| acc + x)
+}
+
+fn example110() {
+    let data = vec![1, 2, 3, 4];
+    let data1 = data;
+    println!("sum of data1: {}", sum1(data1));
     // 下面两句无法编译通过
     // println!("data1: {:?}", data1);
     // println!("sum of data: {}", sum(data));
 }
 
-fn sum(data: Vec<u32>) -> u32 {
+fn sum1(data: Vec<u32>) -> u32 {
     data.iter().sum()
 }
