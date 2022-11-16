@@ -1,7 +1,0 @@
-[workspace]
-
-members = [
-    "httpie",
-    "queryer",
-    "ownership",
-]
