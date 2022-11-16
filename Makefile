@@ -4,7 +4,7 @@ SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
 
-GK		:= geektime
+GK		:= gk
 
 LIBRARIES	:=
 EXECUTABLE	:= main
@@ -15,6 +15,11 @@ ifeq ($(UNAME_S), Darwin)
 else
 	findArgs = -type f -executable -exec sh -c "file -i '{}' | grep -q 'x-executable; charset=binary'" \; -print | xargs rm -f
 endif
+
+
+fmt: 
+	@rustfmt src/*/*.rs -v
+
 
 
 clean: cleanbin cleandir
