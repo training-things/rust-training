@@ -1,0 +1,158 @@
+// WARNING: This output format is intended for human consumers only
+// and is subject to change without notice. Knock yourself out.
+fn hello_world() -> impl futures::Future<Output = ()> {
+    let mut _0: impl futures::Future<Output = ()>; // return place in scope 0 at src/main.rs:6:24: 6:24
+    let mut _1: [static generator@src/main.rs:6:24: 8:2]; // in scope 0 at src/main.rs:6:24: 8:2
+
+    bb0: {
+        Deinit(_1);                      // scope 0 at src/main.rs:6:24: 8:2
+        discriminant(_1) = 0;            // scope 0 at src/main.rs:6:24: 8:2
+        _0 = std::future::from_generator::<[static generator@src/main.rs:6:24: 8:2]>(move _1) -> bb1; // scope 0 at src/main.rs:6:24: 8:2
+                                         // mir::Constant
+                                         // + span: src/main.rs:6:24: 8:2
+                                         // + literal: Const { ty: fn([static generator@src/main.rs:6:24: 8:2]) -> impl futures::Future<Output = ()> {std::future::from_generator::<[static generator@src/main.rs:6:24: 8:2]>}, val: Value(<ZST>) }
+    }
+
+    bb1: {
+        return;                          // scope 0 at src/main.rs:8:2: 8:2
+    }
+}
+
+fn hello_world::{closure#0}(_1: Pin<&mut [static generator@src/main.rs:6:24: 8:2]>, _2: ResumeTy) -> GeneratorState<(), ()> {
+    debug _task_context => _14;          // in scope 0 at src/main.rs:6:24: 8:2
+    let mut _0: std::ops::GeneratorState<(), ()>; // return place in scope 0 at src/main.rs:6:24: 8:2
+    let _3: ();                          // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:9: 136:62
+    let mut _4: std::fmt::Arguments;     // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    let mut _5: &[&str];                 // in scope 0 at src/main.rs:7:14: 7:29
+    let mut _6: &[&str; 1];              // in scope 0 at src/main.rs:7:14: 7:29
+    let _7: &[&str; 1];                  // in scope 0 at src/main.rs:7:14: 7:29
+    let mut _8: &[std::fmt::ArgumentV1]; // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    let mut _9: &[std::fmt::ArgumentV1; 0]; // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    let _10: &[std::fmt::ArgumentV1; 0]; // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    let mut _11: &[std::fmt::ArgumentV1; 0]; // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    let mut _12: &[&str; 1];             // in scope 0 at src/main.rs:7:14: 7:29
+    let mut _13: ();                     // in scope 0 at src/main.rs:6:24: 8:2
+    let mut _14: std::future::ResumeTy;  // in scope 0 at src/main.rs:6:24: 8:2
+    let mut _15: u32;                    // in scope 0 at src/main.rs:6:24: 8:2
+    let mut _16: &mut [static generator@src/main.rs:6:24: 8:2]; // in scope 0 at src/main.rs:6:24: 8:2
+    let mut _17: &mut [static generator@src/main.rs:6:24: 8:2]; // in scope 0 at src/main.rs:6:24: 8:2
+    let mut _18: &mut [static generator@src/main.rs:6:24: 8:2]; // in scope 0 at src/main.rs:6:24: 8:2
+
+    bb0: {
+        _16 = deref_copy (_1.0: &mut [static generator@src/main.rs:6:24: 8:2]); // scope 0 at src/main.rs:6:24: 8:2
+        _15 = discriminant((*_16));      // scope 0 at src/main.rs:6:24: 8:2
+        switchInt(move _15) -> [0_u32: bb1, 1_u32: bb6, 2_u32: bb5, otherwise: bb7]; // scope 0 at src/main.rs:6:24: 8:2
+    }
+
+    bb1: {
+        _14 = move _2;                   // scope 0 at src/main.rs:6:24: 8:2
+        _12 = const _;                   // scope 0 at src/main.rs:7:14: 7:29
+                                         // mir::Constant
+                                         // + span: src/main.rs:7:14: 7:29
+                                         // + literal: Const { ty: &[&str; 1], val: Unevaluated(hello_world::{closure#0}, [<resume_ty>, <yield_ty>, <return_ty>, <witness>, <upvars>], Some(promoted[1])) }
+        _7 = _12;                        // scope 0 at src/main.rs:7:14: 7:29
+        _6 = _7;                         // scope 0 at src/main.rs:7:14: 7:29
+        _5 = move _6 as &[&str] (Pointer(Unsize)); // scope 0 at src/main.rs:7:14: 7:29
+        _11 = const _;                   // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+                                         // mir::Constant
+                                         // + span: /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+                                         // + literal: Const { ty: &[ArgumentV1; 0], val: Unevaluated(hello_world::{closure#0}, [<resume_ty>, <yield_ty>, <return_ty>, <witness>, <upvars>], Some(promoted[0])) }
+        _10 = _11;                       // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+        _9 = _10;                        // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+        _8 = move _9 as &[std::fmt::ArgumentV1] (Pointer(Unsize)); // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+        _4 = Arguments::new_v1(move _5, move _8) -> [return: bb2, unwind: bb4]; // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+                                         // mir::Constant
+                                         // + span: /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+                                         // + user_ty: UserType(0)
+                                         // + literal: Const { ty: fn(&[&'static str], &[ArgumentV1]) -> Arguments {Arguments::new_v1}, val: Value(<ZST>) }
+    }
+
+    bb2: {
+        _3 = _print(move _4) -> [return: bb3, unwind: bb4]; // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:9: 136:62
+                                         // mir::Constant
+                                         // + span: /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:9: 136:27
+                                         // + literal: Const { ty: for<'r> fn(Arguments<'r>) {_print}, val: Value(<ZST>) }
+    }
+
+    bb3: {
+        _13 = const ();                  // scope 0 at src/main.rs:6:24: 8:2
+        Deinit(_0);                      // scope 0 at src/main.rs:8:2: 8:2
+        ((_0 as Complete).0: ()) = move _13; // scope 0 at src/main.rs:8:2: 8:2
+        discriminant(_0) = 1;            // scope 0 at src/main.rs:8:2: 8:2
+        _17 = deref_copy (_1.0: &mut [static generator@src/main.rs:6:24: 8:2]); // scope 0 at src/main.rs:8:2: 8:2
+        discriminant((*_17)) = 1;        // scope 0 at src/main.rs:8:2: 8:2
+        return;                          // scope 0 at src/main.rs:8:2: 8:2
+    }
+
+    bb4 (cleanup): {
+        _18 = deref_copy (_1.0: &mut [static generator@src/main.rs:6:24: 8:2]); // scope 0 at src/main.rs:6:24: 8:2
+        discriminant((*_18)) = 2;        // scope 0 at src/main.rs:6:24: 8:2
+        resume;                          // scope 0 at src/main.rs:6:24: 8:2
+    }
+
+    bb5: {
+        assert(const false, "`async fn` resumed after panicking") -> bb5; // scope 0 at src/main.rs:6:24: 8:2
+    }
+
+    bb6: {
+        assert(const false, "`async fn` resumed after completion") -> bb6; // scope 0 at src/main.rs:6:24: 8:2
+    }
+
+    bb7: {
+        unreachable;                     // scope 0 at src/main.rs:6:24: 8:2
+    }
+}
+
+promoted[0] in hello_world::{closure#0}: &[ArgumentV1; 0] = {
+    let mut _0: &[std::fmt::ArgumentV1; 0]; // return place in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    let mut _1: [std::fmt::ArgumentV1; 0]; // in scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+
+    bb0: {
+        _1 = [];                         // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+        _0 = &_1;                        // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+        return;                          // scope 0 at /rustc/897e37553bba8b42751c67658967889d11ecd120/library/std/src/macros.rs:136:28: 136:61
+    }
+}
+
+promoted[1] in hello_world::{closure#0}: &[&str; 1] = {
+    let mut _0: &[&str; 1];              // return place in scope 0 at src/main.rs:7:14: 7:29
+    let mut _1: [&str; 1];               // in scope 0 at src/main.rs:7:14: 7:29
+
+    bb0: {
+        _1 = [const "hello, world!\n"];  // scope 0 at src/main.rs:7:14: 7:29
+                                         // mir::Constant
+                                         // + span: src/main.rs:7:14: 7:29
+                                         // + literal: Const { ty: &str, val: Value(Slice(..)) }
+        _0 = &_1;                        // scope 0 at src/main.rs:7:14: 7:29
+        return;                          // scope 0 at src/main.rs:7:14: 7:29
+    }
+}
+
+fn main() -> () {
+    let mut _0: ();                      // return place in scope 0 at src/main.rs:10:11: 10:11
+    let _1: impl futures::Future<Output = ()>; // in scope 0 at src/main.rs:11:9: 11:15
+    let _2: ();                          // in scope 0 at src/main.rs:12:5: 12:21
+    let mut _3: impl futures::Future<Output = ()>; // in scope 0 at src/main.rs:12:14: 12:20
+    scope 1 {
+        debug future => _1;              // in scope 1 at src/main.rs:11:9: 11:15
+    }
+
+    bb0: {
+        _1 = hello_world() -> bb1;       // scope 0 at src/main.rs:11:18: 11:31
+                                         // mir::Constant
+                                         // + span: src/main.rs:11:18: 11:29
+                                         // + literal: Const { ty: fn() -> impl futures::Future<Output = ()> {hello_world}, val: Value(<ZST>) }
+    }
+
+    bb1: {
+        _3 = move _1;                    // scope 1 at src/main.rs:12:14: 12:20
+        _2 = block_on::<impl futures::Future<Output = ()>>(move _3) -> bb2; // scope 1 at src/main.rs:12:5: 12:21
+                                         // mir::Constant
+                                         // + span: src/main.rs:12:5: 12:13
+                                         // + literal: Const { ty: fn(impl futures::Future<Output = ()>) -> <impl futures::Future<Output = ()> as futures::Future>::Output {block_on::<impl futures::Future<Output = ()>>}, val: Value(<ZST>) }
+    }
+
+    bb2: {
+        return;                          // scope 0 at src/main.rs:13:2: 13:2
+    }
+}
